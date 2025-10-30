@@ -98,7 +98,7 @@ npm run dev
 ## 🎥 Demo Video
 
 Watch the **1-2 minute demo** here:
-[Demo Video - ](https://www.loom.com/share/your-demo-link)
+[Demo Video - ](https://youtu.be/mvZp1HbG5Qk)
 
 ---
 
