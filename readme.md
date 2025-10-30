@@ -1,5 +1,3 @@
-Absolutely! Here’s a **complete README template** for your **MockCartSystem project** in a **professional, submission-ready format**. You can just fill in the **screenshots** and **demo video link** later.
-
 ```markdown
 # 🛒 MockCartSystem - Full Stack Tech-Shop
 
@@ -29,10 +27,11 @@ This project demonstrates a **full-stack e-commerce workflow**: product listing,
 - **HTTP Requests:** REST APIs
 
 ---
-
-## 🏗️ Project Structure
 ```
 
+## 🏗️ Project Structure
+
+```
 MockCartSystem/
 ├── backend/
 │ ├── index.js
@@ -48,17 +47,18 @@ MockCartSystem/
 │ └── package.json
 ├── README.md
 
-````
+```
 
 ---
 
 ## 🚀 Setup Instructions
 
 ### 1️⃣ Clone Repository
+
 ```bash
-git clone https://github.com/yourusername/MockCartSystem.git
-cd MockCartSystem
-````
+git clone https://github.com/sowmitraguho/ecom-cart-system
+cd ecom-cart-system
+```
 
 ### 2️⃣ Setup Backend
 
