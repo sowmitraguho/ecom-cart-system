@@ -31,22 +31,21 @@ This project demonstrates a **full-stack e-commerce workflow**: product listing,
 ---
 
 ## 🏗️ Project Structure
-
 ```
 
 MockCartSystem/
 ├── backend/
-│   ├── index.js
-│   ├── models/
-│   ├── routes/
-│   ├── config/
-│   └── package.json
+│ ├── index.js
+│ ├── models/
+│ ├── routes/
+│ ├── config/
+│ └── package.json
 ├── frontend/
-│   ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── api/
-│   └── package.json
+│ ├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── api/
+│ └── package.json
 ├── README.md
 
 ````
@@ -69,8 +68,8 @@ npm install
 npm start
 ```
 
-* Backend runs on `http://localhost:5000`
-* Make sure **MongoDB** is running locally or configure `.env` with MongoDB URI
+- Backend runs on `http://localhost:5000`
+- Make sure **MongoDB** is running locally or configure `.env` with MongoDB URI
 
 ### 3️⃣ Setup Frontend
 
@@ -80,7 +79,7 @@ npm install
 npm run dev
 ```
 
-* Frontend runs on `http://localhost:5173` (or port assigned by Vite)
+- Frontend runs on `http://localhost:5173` (or port assigned by Vite)
 
 ---
 
@@ -88,26 +87,18 @@ npm run dev
 
 ### Home Page
 
-![Home Screenshot](./screenshots/home.png)
-
-### Product Card
-
-![Product Card Screenshot](./screenshots/product-card.png)
+![Home Screenshot](./screenshots/homePage.png)
 
 ### Cart Page
 
-![Cart Screenshot](./screenshots/cart.png)
-
-### Checkout Modal
-
-![Checkout Modal Screenshot](./screenshots/checkout-modal.png)
+![Cart Screenshot](./screenshots/cartpage.png)
 
 ---
 
 ## 🎥 Demo Video
 
 Watch the **1-2 minute demo** here:
-[Demo Video - Loom/YouTube Unlisted](https://www.loom.com/share/your-demo-link)
+[Demo Video - ](https://www.loom.com/share/your-demo-link)
 
 ---
 
@@ -123,10 +114,10 @@ Watch the **1-2 minute demo** here:
 
 ## ✅ Notes
 
-* Fully responsive, works on mobile and desktop
-* Styled with modern gradients, hover effects, and shadow cards
-* REST API integration between frontend and backend
-* Easy to extend for additional features like authentication or payment integration
+- Fully responsive, works on mobile and desktop
+- Styled with modern gradients, hover effects, and shadow cards
+- REST API integration between frontend and backend
+- Easy to extend for additional features like authentication or payment integration
 
 ---
 
@@ -139,14 +130,14 @@ MIT License
 ---
 
 ### ✅ What’s included
-1. **Setup instructions** for backend and frontend  
-2. **Screenshots section** (just add your actual images in `screenshots/` folder)  
-3. **Demo video link placeholder**  
-4. Clean **tech-shop style explanation**  
+1. **Setup instructions** for backend and frontend
+2. **Screenshots section** (just add your actual images in `screenshots/` folder)
+3. **Demo video link placeholder**
+4. Clean **tech-shop style explanation**
 
 ---
 
-I can also create a **ready-to-use screenshots folder structure** with **mock screenshots names** and a **small tip on recording the Loom demo**, so you just drop images/video in and submit.  
+I can also create a **ready-to-use screenshots folder structure** with **mock screenshots names** and a **small tip on recording the Loom demo**, so you just drop images/video in and submit.
 
 Do you want me to do that next?
 ```
