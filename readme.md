@@ -87,11 +87,11 @@ npm run dev
 
 ### Home Page
 
-![Home Screenshot](./screenshots/homePage.png)
+![Home Screenshot](homePage.png)
 
 ### Cart Page
 
-![Cart Screenshot](./screenshots/cartpage.png)
+![Cart Screenshot](cartpage.png)
 
 ---
 
