@@ -50,45 +50,46 @@ export default function Cart() {
   return (
     <div className="relative">
       <Toaster position="top-right" />
-      <h1 className="text-2xl font-bold mb-4">🛒 Your Cart</h1>
+      <h1 className="text-3xl font-bold mb-6 text-indigo-600">🛒 Your Cart</h1>
 
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="text-gray-600 text-lg">Your cart is empty.</p>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-6">
           {cart.map((item) => (
             <div
               key={item._id}
-              className="flex items-center justify-between border p-3 rounded-lg"
+              className="flex flex-col md:flex-row items-center justify-between bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4 mb-3 md:mb-0">
                 <img
                   src={item.product.image}
                   alt={item.product.name}
-                  className="w-16 h-16 rounded"
+                  className="w-20 h-20 rounded-lg object-cover"
                 />
                 <div>
-                  <h2 className="font-semibold">{item.product.name}</h2>
-                  <p>${item.product.price}</p>
+                  <h2 className="font-semibold text-lg text-gray-800">{item.product.name}</h2>
+                  <p className="text-yellow-500 font-bold text-md">${item.product.price}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+
+              <div className="flex items-center gap-3">
                 <button
                   onClick={() => updateQuantity(item._id, item.quantity - 1)}
-                  className="bg-gray-300 px-2 rounded"
+                  className="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300 transition"
                 >
                   -
                 </button>
-                <span>{item.quantity}</span>
+                <span className="font-medium text-lg">{item.quantity}</span>
                 <button
                   onClick={() => updateQuantity(item._id, item.quantity + 1)}
-                  className="bg-gray-300 px-2 rounded"
+                  className="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300 transition"
                 >
                   +
                 </button>
                 <button
                   onClick={() => removeItem(item._id)}
-                  className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                  className="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-600 transition"
                 >
                   Remove
                 </button>
@@ -96,16 +97,19 @@ export default function Cart() {
             </div>
           ))}
 
-          <div className="text-right font-bold text-lg mt-2">
+          {/* Total */}
+          <div className="text-right font-bold text-xl text-indigo-700">
             Total: ${total.toFixed(2)}
           </div>
 
           {/* Checkout Form */}
           <form
             onSubmit={handleCheckoutSubmit}
-            className="mt-6 border-t pt-4 space-y-3 max-w-md mx-auto"
+            className="mt-6 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 p-6 rounded-xl shadow-lg max-w-md mx-auto space-y-4"
           >
-            <h2 className="text-xl font-semibold mb-2">Checkout Information</h2>
+            <h2 className="text-2xl font-semibold text-indigo-600 mb-2">
+              Checkout Information
+            </h2>
             <input
               type="text"
               placeholder="Your Name"
@@ -113,7 +117,7 @@ export default function Cart() {
               onChange={(e) =>
                 setCheckoutData({ ...checkoutData, name: e.target.value })
               }
-              className="border p-2 rounded w-full"
+              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
             />
             <input
               type="email"
@@ -122,11 +126,11 @@ export default function Cart() {
               onChange={(e) =>
                 setCheckoutData({ ...checkoutData, email: e.target.value })
               }
-              className="border p-2 rounded w-full"
+              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
             />
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 w-full"
+              className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 hover:shadow-lg transition transform"
             >
               Proceed to Checkout
             </button>
@@ -136,34 +140,25 @@ export default function Cart() {
 
       {/* Receipt Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-[90%] max-w-md">
-            <h2 className="text-2xl font-semibold mb-2">🧾 Order Receipt</h2>
-            <p className="mb-2">
-              <strong>Name:</strong> {checkoutData.name}
-            </p>
-            <p className="mb-2">
-              <strong>Email:</strong> {checkoutData.email}
-            </p>
-            <div className="border-t mt-3 pt-3">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-3 text-indigo-600">🧾 Order Receipt</h2>
+            <p className="mb-2"><strong>Name:</strong> {checkoutData.name}</p>
+            <p className="mb-2"><strong>Email:</strong> {checkoutData.email}</p>
+            <div className="border-t mt-3 pt-3 space-y-1">
               {cart.map((item) => (
-                <div
-                  key={item._id}
-                  className="flex justify-between text-sm mb-1"
-                >
-                  <span>
-                    {item.product.name} (x{item.quantity})
-                  </span>
-                  <span>${item.product.price * item.quantity}</span>
+                <div key={item._id} className="flex justify-between text-gray-700">
+                  <span>{item.product.name} (x{item.quantity})</span>
+                  <span className="font-bold">${item.product.price * item.quantity}</span>
                 </div>
               ))}
-              <div className="text-right font-bold mt-2">
+              <div className="text-right font-bold text-indigo-700 mt-2">
                 Total: ${total.toFixed(2)}
               </div>
             </div>
             <button
               onClick={closeModal}
-              className="mt-4 bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 w-full"
+              className="mt-4 w-full bg-green-500 text-white px-5 py-2 rounded-xl hover:bg-green-600 transition"
             >
               Confirm Order
             </button>
